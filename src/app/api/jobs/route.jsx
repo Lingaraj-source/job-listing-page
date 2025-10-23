@@ -1,4 +1,3 @@
-// src/app/api/jobs/route.jsx
 import { NextResponse } from "next/server";
 import { jobsData } from "@/lib/jobs";
 

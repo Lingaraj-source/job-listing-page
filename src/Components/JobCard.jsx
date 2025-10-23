@@ -1,4 +1,3 @@
-// src/components/JobCard.jsx
 "use client";
 
 import { useState } from "react";

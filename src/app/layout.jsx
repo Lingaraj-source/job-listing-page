@@ -1,6 +1,5 @@
-// src/app/layout.jsx
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/Components/Navbar";
 
 export const metadata = {
   title: "Job Portal",
