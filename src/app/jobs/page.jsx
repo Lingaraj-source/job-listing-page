@@ -5,7 +5,7 @@ import JobCard from "@/components/JobCard";
 import JobFilter from "@/components/JobFilter";
 
 export default function JobsPage() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  // const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"; // <--- DELETE THIS LINE
 
   const [jobs, setJobs] = useState([]);
   const [filters, setFilters] = useState({ title: "", location: "" });
@@ -13,7 +13,10 @@ export default function JobsPage() {
 
   useEffect(() => {
     const query = new URLSearchParams(filters).toString();
-    fetch(`${baseUrl}/api/jobs?${query}`)
+
+    //  ▼▼▼ THIS IS THE FIX ▼▼▼
+    fetch(`/api/jobs?${query}`)
+      //  ▲▲▲ THIS IS THE FIX ▲▲▲
       .then((res) => res.json())
       .then(setJobs);
   }, [submitTrigger]); // fetch runs only when submitTrigger changes
@@ -23,6 +26,7 @@ export default function JobsPage() {
   };
 
   return (
+    // ... (The rest of your code is perfectly fine)
     <div className="min-h-screen bg-gray-50 py-10">
       <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-4xl font-bold mb-8 text-center text-blue-700">
