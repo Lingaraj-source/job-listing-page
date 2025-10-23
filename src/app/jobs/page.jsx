@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import JobCard from "@/Components/JobCard";
-import JobFilter from "@/Components/JobFilter";
+import JobCard from "@/components/JobCard";
+import JobFilter from "@/components/JobFilter";
 
 export default function JobsPage() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
